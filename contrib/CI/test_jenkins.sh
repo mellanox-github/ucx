@@ -131,6 +131,12 @@ should_do_task() {
 # Do a given task only if the current worker is supposed to do it.
 #
 do_distributed_task() {
+
+  # DEBUG
+  echo "=====================do_distributed_task========================"
+  echo $*
+  return
+
 	set +x
 	task=$1
 	ntasks=$2
@@ -178,6 +184,10 @@ get_active_ib_devices() {
 #
 prepare() {
 	echo " ==== Prepare ===="
+
+  # DEBUG
+  return
+
 	env
 	cd ${WORKSPACE}
 	./autogen.sh
@@ -1167,6 +1177,11 @@ run_ucx_tl_check() {
 # Run all tests
 #
 run_tests() {
+
+  # DEBUG
+  echo "=========Running Test=================="
+  return
+
 	export UCX_HANDLE_ERRORS=freeze,bt
 	export UCX_ERROR_SIGNALS=SIGILL,SIGSEGV,SIGBUS,SIGFPE,SIGPIPE,SIGABRT
 	export UCX_ERROR_MAIL_TO=$ghprbActualCommitAuthorEmail
