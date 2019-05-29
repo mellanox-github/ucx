@@ -35,6 +35,7 @@ BuildRequires: gdrcopy
 %if %{with ib}
 BuildRequires: libibverbs-devel
 %endif
+
 %if %{with ib_cm}
 BuildRequires: libibcm-devel
 %endif
